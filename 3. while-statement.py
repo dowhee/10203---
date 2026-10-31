@@ -1,6 +1,6 @@
 #반복문
 a = 0
-while a < 423:
+while a < 10:
     print(a)
     a += 1 # a = a + 1
 
@@ -9,7 +9,7 @@ print("1. 게임 시작")
 print("2. 랭킹 확인")
 print("0. 게임종료")
 print("=====================")
-user_input = None  #변수 할당
+user_input = "0"  #변수 할당 None 으로 해야 실행 지금은 아래꺼 실행하느라 0으로 진행
 
 while user_input != "0":
     user_input = input("원하는 동작을 입력하세요")
@@ -22,3 +22,17 @@ while user_input != "0":
         print("게임을 종료합니다.")
     else:
         print("잘못된 입력입니다.")
+
+while True:
+    user_input = input("원하는 동작을 입력하세요")
+    if user_input == "0":
+        print("게임을 종료합니다.")
+        break #해당 if문을 포함하는 직속 while문을 종료
+
+
+b = 0
+while b < 10:
+    b += 1
+    if b ==5:
+        continue
+    print(b)
