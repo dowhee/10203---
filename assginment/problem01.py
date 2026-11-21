@@ -1,5 +1,6 @@
 age = int(input("나이를 입력하세요"))
 print(age)
+
 if age < 8:
     print("무료입니다")
 elif 8 <= age <= 19:
