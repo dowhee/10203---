@@ -54,6 +54,21 @@ def search_movie():
     print("--------------------")
     print(keyword, "장르로 검색된 영화", searched_movies_by_genre)
 
+def external_api_update_movie():
+    return [
+        {"title": "인사이드 아웃 2", "genre": "애니메이션", "rating": 8.7, "views": 2000},
+        {"title": "왕과 사는 남자", "genre": "사극", "rating": 9.0, "views": 1693},
+        {"title": "오디세이", "genre": "해외 영화", "rating": 9.2, "views": 1236},
+        {"title": "폭설", "genre": "스릴러", "rating": 8.5, "views": 35},
+        {"title": "토이 스토리 5", "genre": "애니메이션", "rating": 8.7, "views": 295},
+    ]
+
+def update_movie():
+    global movies
+    updated_movies = external_api_update_movie()
+    movies = updated_movies
+    print(movies)
+
 
 while True:
     print("====================")
@@ -61,6 +76,7 @@ while True:
     print("2. 장르별 누적조회수 조회")
     print("3. 최다 조회수 영화 조회")
     print("4, 영화 검색하기")
+    print("5. 최신 정보 업데이트하기")
     print("0. 종료하기")
     print("====================")
     choice = int(input("Enter your choice:"))
@@ -76,6 +92,8 @@ while True:
         retrieve_max_view_movies()
     elif choice == 4:
         search_movie()
+    elif choice == 5:
+        update_movie()
     else:
         print("잘못된 입력입니다")
 
