@@ -72,9 +72,9 @@ def update_movie():
     # 기존에 있던 영화만 값을 덮어쓰게
     for movie in updated_movies:
         for existing_movie in movies:
-            if movie["title"] == existing_movie["title"]:
-                movie["rating"] = existing_movie["rating"]
-                movie["views"] = existing_movie["views"]
+            if updated_movie["title"] == existing_movie["title"]:
+                existing_movie["rating"] = movie["rating"]
+                existing_movie["views"] = movie["views"]
                 is_exist = True
                 break
             if is_exist = False:
