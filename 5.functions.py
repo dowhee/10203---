@@ -66,7 +66,20 @@ def external_api_update_movie():
 def update_movie():
     global movies
     updated_movies = external_api_update_movie()
-    movies = updated_movies
+    # updated_movies가 기존 movies를 날리고 덮어쓰게됨
+    # movies = updated_movies
+    # updated_movies에서 신규 영화는 추가하고,
+    # 기존에 있던 영화만 값을 덮어쓰게
+    for movie in updated_movies:
+        for existing_movie in movies:
+            if movie["title"] == existing_movie["title"]:
+                movie["rating"] = existing_movie["rating"]
+                movie["views"] = existing_movie["views"]
+                is_exist = True
+                break
+            if is_exist = False:
+                movies.append(movie)
+
     print(movies)
 
 
